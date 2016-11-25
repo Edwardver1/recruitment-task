@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
+  devise_scope :user do
+    get '/signup' => 'devise/registrations#new'
+    get '/login' => 'devise/sessions#new'
+    get '/forgot_password' => 'devise/passwords#new'
+  end
 
   root 'developers#index'
 
