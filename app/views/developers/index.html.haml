@@ -7,13 +7,16 @@
 %h2 All developers
 - @developers.each do |developer|
   .developer
+    // Developer full name
     = link_to developer.full_name, developer_path(developer)
     %br/
+    // Displaying Developer Avatar
     = image_tag developer.avatar.url(:medium)
     %br/
     Project count:
     = developer.projects.count
     %br/
     Joined at:
+    // Adding developer created date and formant is DD/MM/YYYY
     = developer.created_at.strftime("%d/%m/%Y")
 
