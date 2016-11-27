@@ -8,11 +8,11 @@ default: &default
 development:
   <<: *default
   database: recruitment_task_development
-  username: Edwardver
-  password: 68631234q
+  username: postgres
+  password: postgres
 
 test:
   <<: *default
   database: recruitment_task_test
-  username: Edwardver
-  password: 68631234q
+  username: postgres
+  password: postgres
